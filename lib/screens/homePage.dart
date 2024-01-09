@@ -1,4 +1,6 @@
 
+import 'dart:ui';
+
 import 'package:bikes_rent_application_v/Data/BikeList.dart';
 import 'package:bikes_rent_application_v/screens/BikeCard.dart';
 import 'package:flutter/material.dart';
@@ -18,7 +20,7 @@ class _HomePageState extends State<HomePage> {
    List<Bike> filter_list=List.from(BikeList.bike);
    void updateList(String value){
     setState(() {
-       // ignore: avoid_types_as_parameter_names, non_constant_identifier_names
+      
        filter_list=BikeList.bike.where((element)=>element.name.toLowerCase().
        contains(value.toLowerCase())).toList();
     });
@@ -30,6 +32,7 @@ class _HomePageState extends State<HomePage> {
       appBar: AppBar(
         backgroundColor: const Color.fromARGB(31, 74, 73, 73),
         title:  TextField(
+          
           onChanged:(value) => updateList(value),
           keyboardType: TextInputType.name,
       
@@ -37,11 +40,13 @@ class _HomePageState extends State<HomePage> {
           cursorWidth: 2.0,
           cursorColor: Colors.white,
           decoration: const InputDecoration(
+            contentPadding: EdgeInsets.symmetric(vertical: 10.0),
               hintText: 'Search',
               hintStyle: TextStyle(color: Colors.white, fontSize: 15),
               fillColor: Colors.white,
               
               border: OutlineInputBorder(
+              
                 borderSide 
                 
                 : BorderSide(color: Colors.white),
@@ -53,10 +58,7 @@ class _HomePageState extends State<HomePage> {
                 Icons.search,
                 color: Colors.white,
               ),
-            //  suffixIcon: Icon(
-           //     Icons.filter_alt_outlined,
-           //     color: Colors.white,
-            //  )
+           
               ),
         ),
       ),

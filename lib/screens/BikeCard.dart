@@ -34,10 +34,9 @@ class BikeCard extends StatelessWidget {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                    builder: (context) => MonoBike(bike: BikeList.bike[index])),
+                    builder: (context) => MonoBike(bike: bike)),
               );
             },
-            // title: Text(" "+bike.name,style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),),
             subtitle: Column(
               children: [
                 const Padding(padding: EdgeInsets.all(10)),
